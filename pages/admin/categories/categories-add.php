@@ -1,3 +1,6 @@
+<?php
+$error = $_SESSION['error'] ?? null;
+?>
 <h2 class="text-2xl mb-3">Tambah Kategori</h2>
 <div class="bg-white p-6 rounded shadow">
   <form action="index.php?page=categories-add-process" method="POST" class="space-y-4">
@@ -13,6 +16,11 @@
         placeholder="Contoh: Fiksi"
         class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-slate-600"
       >
+      <?php if (isset($error['name'])): ?>
+        <p class="text-sm text-red-600 mt-1">
+          <?= $error['name'] ?>
+        </p>
+      <?php endif; ?>
     </div>
 
     <!-- Keterangan (Optional) -->
@@ -47,3 +55,6 @@
 
   </form>
 </div>
+<?php
+unset($_SESSION['error']);
+?>

@@ -56,10 +56,10 @@
       </button>
 
       <div id="menuDropdownMember" class="hidden ml-4 mt-2 space-y-1">
-        <a href="#" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
+        <a href="index.php?page=classrooms" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
           Kelas
         </a>
-        <a href="#" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
+        <a href="index.php?page=academic-years" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
           Tahun Ajar
         </a>
         <a href="#" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">

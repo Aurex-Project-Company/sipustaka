@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
   if (empty($error)) {
-    $query = "INSERT INTO categories(name, description) VALUES (?, ?)";
-    $stmt = mysqli_prepare($connect, $query);
+    $sql = "INSERT INTO categories(name, description) VALUES (?, ?)";
+    $stmt = mysqli_prepare($connect, $sql);
     mysqli_stmt_bind_param($stmt, "ss", $name, $description);
     mysqli_stmt_execute($stmt);
 

@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
   if (empty($error)) {
-    $query = "UPDATE categories SET name = ?, description = ? WHERE id = ?";
-    $stmt = mysqli_prepare($connect, $query);
+    $sql = "UPDATE categories SET name = ?, description = ? WHERE id = ?";
+    $stmt = mysqli_prepare($connect, $sql);
     mysqli_stmt_bind_param($stmt, "ssi", $name, $description, $id);
     mysqli_stmt_execute($stmt);
 
