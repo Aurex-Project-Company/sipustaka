@@ -1,6 +1,8 @@
 <?php
 $pages = [
   'login' => 'pages/login.php',
+  'login-process' => 'pages/login-process.php',
+  'logout' => 'pages/logout.php',
   'dashboard' => 'pages/admin/dashboard.php',
   'books' => 'pages/admin/books/book.php',
   'categories' => 'pages/admin/categories/categories.php',

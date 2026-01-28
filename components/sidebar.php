@@ -4,7 +4,7 @@
   <div class="p-4 border-b border-slate-700">
     <button onclick="toggleProfile()" class="w-full flex items-center justify-between">
       <div>
-        <p class="font-semibold">Rakhmat</p>
+        <p class="font-semibold"><?= $_SESSION["name"] ?></p>
         <p class="text-xs text-slate-300">Administrator</p>
       </div>
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -15,7 +15,7 @@
 
     <div id="profileDropdown" class="hidden mt-3 space-y-2">
       <a href="#" class="block text-sm hover:text-slate-300">Profile</a>
-      <a href="#" class="block text-sm text-red-400 hover:text-red-300">Logout</a>
+      <a href="auth.php?page=logout" class="block text-sm text-red-400 hover:text-red-300">Logout</a>
     </div>
   </div>
 

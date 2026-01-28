@@ -1,6 +1,11 @@
 <?php
 ob_start();
 session_start();
+if (!isset($_SESSION["name"])) {
+  header("Location: auth.php?page=login");
+  exit();
+}
+
 require_once "config/database.php";
 require_once "routes/web.php";
 require_once "library/library.php";
