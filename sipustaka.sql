@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 09, 2026 at 01:02 PM
+-- Generation Time: Feb 09, 2026 at 05:24 PM
 -- Server version: 8.0.30
--- PHP Version: 8.4.17
+-- PHP Version: 8.3.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -105,6 +105,41 @@ CREATE TABLE `members` (
   `registration_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Dumping data for table `members`
+--
+
+INSERT INTO `members` (`id`, `member_type`, `registration_date`) VALUES
+(1, 'Guru', '2026-02-09'),
+(3, 'Guru', '2026-02-09'),
+(4, 'Siswa', '2026-02-09'),
+(5, 'Siswa', '2026-02-09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `students`
+--
+
+CREATE TABLE `students` (
+  `id` int NOT NULL,
+  `member_id` int NOT NULL,
+  `identity_number` varchar(128) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `gender` enum('L','P') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `entry_year` int NOT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `students`
+--
+
+INSERT INTO `students` (`id`, `member_id`, `identity_number`, `name`, `gender`, `address`, `entry_year`, `is_active`) VALUES
+(1, 4, '710401R23002', 'AHMED MIDO FAHREZI JAYA', 'L', 'Jln ABC No. 1', 2023, 1),
+(2, 5, '710401R23025', 'RIFDA NABIL RAMADANI', 'P', 'Jln Bali No 10', 2023, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -114,10 +149,20 @@ CREATE TABLE `members` (
 CREATE TABLE `teachers` (
   `id` int NOT NULL,
   `member_id` int NOT NULL,
+  `identity_number` varchar(128) NOT NULL,
   `name` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `teacher_subject` varchar(255) NOT NULL
+  `teacher_subject` varchar(255) NOT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `teachers`
+--
+
+INSERT INTO `teachers` (`id`, `member_id`, `identity_number`, `name`, `phone`, `teacher_subject`, `is_active`) VALUES
+(1, 1, '20250212001', 'Rakhmat Khaidir', '6288215527198', 'Produktif RPL', 1),
+(3, 3, '20250212002', 'Amrina Rosada', '6288980985973', 'Produktif RPL', 1);
 
 -- --------------------------------------------------------
 
@@ -169,6 +214,12 @@ ALTER TABLE `members`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `teachers`
 --
 ALTER TABLE `teachers`
@@ -206,13 +257,19 @@ ALTER TABLE `classrooms`
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `students`
+--
+ALTER TABLE `students`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
