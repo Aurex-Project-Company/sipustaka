@@ -4,6 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $name = htmlspecialchars($_POST["name"]);
   $description = htmlspecialchars($_POST["description"]);
 
+  $encryptId = encryptId($id);
+
   $error = [];
   if (empty($name)) {
     $error["name"] = "Nama Kategori harus diisi";
@@ -11,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   if (count($error) > 0) {
     $_SESSION["error"] = $error;
-    header("Location: index.php?page=categories-edit&id=<?= encryptId($id) ?>");
+    header("Location: index.php?page=categories-edit&id=$encryptId");
     exit;
   }
 

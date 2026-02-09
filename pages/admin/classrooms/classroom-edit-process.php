@@ -4,6 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $name = htmlspecialchars($_POST["name"]);
   $grade = htmlspecialchars($_POST["grade"]);
 
+  $encryptId = encryptId($id);
+  
   $error = [];
   if (empty($name)) {
     $error["name"] = "Nama Kelas harus diisi";
@@ -15,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   if (count($error) > 0) {
     $_SESSION["error"] = $error;
-    header("Location: index.php?page=classrooms-edit&id=<?= encryptId($id) ?>");
+    header("Location: index.php?page=classrooms-edit&id=$encryptId");
     exit;
   }
 

@@ -18,5 +18,11 @@ $pages = [
   'classrooms-edit-process' => 'pages/admin/classrooms/classroom-edit-process.php',
   'classrooms-delete' => 'pages/admin/classrooms/classroom-delete.php',
   'academic-years' => 'pages/admin/academic_years/academic-year.php',
+  'academic-years-add' => 'pages/admin/academic_years/academic-year-add.php',
+  'academic-years-add-process' => 'pages/admin/academic_years/academic-year-add-process.php',
+  'academic-years-edit' => 'pages/admin/academic_years/academic-year-edit.php',
+  'academic-years-edit-process' => 'pages/admin/academic_years/academic-year-edit-process.php',
+  'teachers' => 'pages/admin/teachers/teacher.php',
+  'teachers-add' => 'pages/admin/teachers/teacher-add.php'
 ];
 ?>

@@ -68,7 +68,7 @@
         <a href="#" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
           Riwayat Kelas
         </a>
-        <a href="#" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
+        <a href="index.php?page=teachers" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
           Guru
         </a>
         <a href="#" class="block px-3 py-1 text-sm rounded hover:bg-slate-700">
