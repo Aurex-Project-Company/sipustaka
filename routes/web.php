@@ -23,6 +23,12 @@ $pages = [
   'academic-years-edit' => 'pages/admin/academic_years/academic-year-edit.php',
   'academic-years-edit-process' => 'pages/admin/academic_years/academic-year-edit-process.php',
   'teachers' => 'pages/admin/teachers/teacher.php',
-  'teachers-add' => 'pages/admin/teachers/teacher-add.php'
+  'teachers-add' => 'pages/admin/teachers/teacher-add.php',
+  'teachers-add-process' => 'pages/admin/teachers/teacher-add-process.php',
+  'teachers-edit' => 'pages/admin/teachers/teacher-edit.php',
+  'teachers-edit-process' => 'pages/admin/teachers/teacher-edit-process.php',
+  'students' => 'pages/admin/students/student.php',
+  'students-add' => 'pages/admin/students/student-add.php',
+  'students-add-process' => 'pages/admin/students/student-add-process.php',
 ];
 ?>

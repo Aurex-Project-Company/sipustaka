@@ -8,10 +8,12 @@ if (!isset($_SESSION["name"])) {
 
 require_once "config/database.php";
 require_once "routes/web.php";
-require_once "library/library.php";
+require_once "helpers/url-encrypt.php";
 
 $page = $_GET['page'] ?? 'dashboard';
 $page_file = $pages[$page] ?? $pages['dashboard'];
+
+require_once "helpers/sidebar-state.php";
 ?>
 <!DOCTYPE html>
 <html lang="id">

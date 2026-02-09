@@ -13,3 +13,7 @@ function toggleMenuMember() {
 function toggleMenuBorrow() {
   document.getElementById("menuDropdownBorrow").classList.toggle("hidden");
 }
+
+function toggleMenuReport() {
+  document.getElementById("menuDropdownReport").classList.toggle("hidden");
+}
